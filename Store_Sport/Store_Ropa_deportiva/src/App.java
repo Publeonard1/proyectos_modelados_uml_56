@@ -13,3 +13,11 @@ public class App {
     }
 }
 // vamos a ralizar la relacion entre clases 
+
+/* Para guarda en mi repositorio en GitHub
+git status
+git add .
+git status
+git commit -m "Se crea proyecto.java para una tienda deportiva"
+git push origin master
+*/
