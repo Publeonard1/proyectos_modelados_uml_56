@@ -20,4 +20,14 @@ git add .
 git status
 git commit -m "Se crea proyecto.java para una tienda deportiva"
 git push origin master
+
+para clonar un repositorio, (descargarlo en nuestro servidor) ver video en el siguiente link
+https://www.youtube.com/watch?v=jkwZqQPK2NI&t=8526s 2 horas, 18' en la clase de 6 Julio 2021
+
+
+Ahora para guardar cambios
+git status para veriifiacar si esta guardado
+git add . 
+git commit -m "Se agrego modificaciones al repositorio"
+git push origin master   -->para subir
 */
