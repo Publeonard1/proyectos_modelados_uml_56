@@ -240,6 +240,144 @@ ebe usarse una clase abstracta cuando se esta modelando una jerarquía de clases
 cuando se pretende homgenizar nombre entre objetos que no estan emparebtados
 ver video pag 30. diapositiva POO UNIDAD 2
 
+------------------ENUMERADOS EN JAVA----------------------------
+
+Son tipos de datos especiales que le permiten a una variable comportarse como un conjunto de 
+constantes predefinidas.
+También se usan para restringir el contenido de una variable.
+El valor de la variable tiene que ser uno del conjunto de valores que fue previamente definida 
+por la misma. su notación es (enum).
+
+<modificador> enum <Nombre Clase> {
+<Métodos>
+}
+public enum DiaSemana {
+    LUNES,
+    MARTES,
+    MIERCOLES,
+    JUEVES,
+    VIERNES,
+    SABADO,
+    DOMINGO
+}
+
+------------------------------PAQUETES--------------------------------------------------------
+
+Son carpetas o paquetes para organizar el codigo para nuestro codigo quede organizado, estos paquetes 
+me permitan entender el codigo y por otra parte separar sistemas y subsistemas que se esten utilizando 
+y en el punto de vista operativo, son carpetas que contienen archivos con clases e interfaces.
+En muchas metodologias de POO usan el termino subsitema para describir un paquete.
+
+IMPORTAR CLASES Y PAQUETES
+
+Cuando hay un paquete o una clase diferente al que estoy operando se tiene que importar para usarlo
+en dado caso que se necesitará, es lo mismo cuando se usó la libreria Scanner, su estructura es 
+la misma
+
+import <nombre paquete>.<nombre clase>;
+
+La sintaxis para importar todas las clases de un paquete es la siguiente:
+import <nombre paqute>;
+
+CREANDO PAQUETES 
+
+Cuando se esté creando una clase, le especificamos en que paquete está. escribimos package
+package <nombre paquete>; 
+
+-----------------------OBJETOS EN JAVA--------------------------
+
+Para crear objetos en Java, los creamos como variables de tipo de dato Clase, usando la palabra
+reservada new y llamada el condcutor deseado
+
+tring cadena = “Hola Mundo”;
+MiPrimerPrograma primer = new MiPrimerPrograma(10); / el objeto es MiPrimerPrograma primer 
+
+En caso de herencia de clases o implementación de interfaces, se pueden crear objetos usando variables de 
+tipo SuperClase o interface
+
+ClaseAbstracta clase = new ClaseConcreta();
+Impresora impresoraTinta = new ImpresoraTinta();
+
+Desde Java 10 podemos crear variables de objetos sin definir su clase. 
+El lenguaje infiere la clase a partir del constructor
+
+var segundo = new MiPrimerPrograma(15);
+
+--------------ARRAYS EN JAVA-------------------------------------------------
+
+Un array o arreglo es una colección de variables del mismo tipo a la que se hace referencia 
+por un nombre común.
+En java, los arrays son objetos que pueden tener una o más dimensiones, aunque el array 
+unidimesional es  el más común. 
+Par declarar un arrayen java
+
+tip [] nombre_array;
+
+int[] intArray; el nombre de la variable como tipo int
+
+Para declara un array en java, debemos usar la palabra new y el tamaño del array
+
+nombre_array = new tipo[tamaño];
+intArray = new int[5];
+
+* Tmabién es posible inicializar el array con una lista de valores
+int[] intArray = { 1,2,3,4,5,6,7,8,9,10 };
+
+* Para asignar un valor a un array, lo asignamos con el nombre de la varaible y el indice entre 
+corchetes. Los índices inician en 0 y terminan en -1
+
+var intArray = new int[2];
+intArray[0] = 1;
+intArray[1] = 2;
+
+*Para obtener el tamaño el array, usamos el atributo length. Para obtner el valor usamos el nombre del 
+array y su limite.
+
+for (int i = 0; i < intArray.length; i++) { // Con un clico for con un incremento de 1 en 1 
+System.out.println("Elemento en el índice " + i + " : "+ intArray[i]); // Y le imprimimos elemento en el indice concatenado con i concatenado con intArray[i]
+
+* Una matriz bidimensional puede tener varias filas, y en cada fila no tiene por qué haber el mismo 
+número de elementos o columnas.
+* Podemos verla como un array que en su contenido tiene otro array que no es necesario que tengan
+el mismo tamaño.
+
+int[][] matrizCuadrada = new int[3][3]; // dos cordenadas [][] = el tamaño de la lista 
+int[][] matrizIrregular = new int[3]; 
+matrizIrregular[0] = new int[3];
+matrizIrregular[1] = new int[20];
+matrizIrregular[2] = new int[1];
+
+* Para obtener el valor usamos el nombre del array y sus indices
+
+matrizCuadrada[2][1] 
+matrizIrregular[1][15]
+
+-------------- PILARES DE P.O.O.-------------------------------
+
+La POO tiene varios pilares para asegurar la simplicidad de codigo y su reutilización. Estos son:
+*Abstracción
+*Encapsulamiento
+*Harencia
+*Poliformismo
+
+Las dos primeras están relacionadas con la búsqueda de simplificar el código y las dos siguientes
+con la reutilización.
+
+ABSTRACCIÓN: Consiste en aislar un elmento de su contexto o del resto de los elemnetos que lo 
+acompañan.
+El término se refiere al énfasis en el. Que hace?. Más que en el Cómo lo hace?. (Cracteristica de caja negra).
+Le permite identificar las caracteristicas y comportaminetos de un objeto y con los cuales se construirá la
+clase.
+Esto quiere decir que a través de este pilar o funcionamiento e sposible reconocer los atributos y
+métodos de un objeto.
+
+ENCAPSULAMIENTO: Permite el ocultamiento de la complejidad del código, pertenece a la parte 
+privada de la clase y que no puede ser vista de de ningún otro programa.
+El encapsulamiento está con el acceso a un codigo en terminos generales, está representación 
+gradica es conveniente para comprender el concepto en encapsulamiento.
+Solo se debe visibilizar desde fuera del objeto solo lo que nesecita ser visible. 
+
+
 
 
 
