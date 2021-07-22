@@ -358,7 +358,7 @@ La POO tiene varios pilares para asegurar la simplicidad de codigo y su reutiliz
 *Abstracción
 *Encapsulamiento
 *Harencia
-*Poliformismo
+*Polimorfismo
 
 Las dos primeras están relacionadas con la búsqueda de simplificar el código y las dos siguientes
 con la reutilización.
@@ -377,7 +377,30 @@ El encapsulamiento está con el acceso a un codigo en terminos generales, está 
 gradica es conveniente para comprender el concepto en encapsulamiento.
 Solo se debe visibilizar desde fuera del objeto solo lo que nesecita ser visible. 
 
+HERENCIA: En java todas las clases incluyendo las clases que componen el API de java, son una 
+subclase de la superclase Object.
+Superclase: Clase que se encuentra sobre una clase especifica en la jerarquía de clases.
+Subclase: Cualquier clase debajo de una clase especifica en la jerarquñia  de clase. 
+*Una vez que un comportamiento, es decir mètodo se define en una superclase, el comportamineto 
+se hereda automaticamentea todas las subclases. 
+Por lo tanto usted puede codificar un método de una sola vez y que puede ser utilizado por todas 
+las subclases. La subclase solo tiene que implementar los métodos que difieren entre está y la 
+clase padre.
+Es la caracteristica que va a tener la clase de hererdar o traer otra clase padre o madre. El cual
+su proposito sea que tenga caracteristicas compartidas con otras clases.
+Palabra reservada super
+● Sirve para referirse a atributos o 
+métodos de la superclase.
+● Para llamar a constructores de la 
+superclase
 
+POLIMORFISMO: Es la capacidad de un  objeto de adquirir varias formas. El uso más común se utiliza 
+la referencia de una clase padre, para referirise al objeto del a clase hijo.
+A través de esta característica es posible definir varios métodos o comportamientos de un objeto 
+bajo un mismo nombre, o reescrbir su funcionamiento, o incrementar más funcionalidades a un método.
+También suele definirse como "sobrecarga de paràmetros".
+
+DIAPOSITIVAS POO UNIDAD 2
 
 
 
