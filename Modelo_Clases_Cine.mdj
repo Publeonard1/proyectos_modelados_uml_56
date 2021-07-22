@@ -417,7 +417,7 @@
 											"top": 294,
 											"width": 80.57080078125,
 											"height": 13,
-											"text": "#id",
+											"text": "-id",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1430,7 +1430,7 @@
 								"$ref": "AAAAAAF6z1APAIqB3n8="
 							},
 							"name": "id",
-							"visibility": "protected"
+							"visibility": "private"
 						}
 					],
 					"operations": [
