@@ -4,8 +4,5 @@ public interface Tiquete_interfaz { // En ves de clase se selecciona "interface"
     public float calcular_Precio(float precio_Base); /*Como es una interfaz no tiene cuerpo y ahí 
     está aclarando que hay clinetes normales y clientes preferenciales, el valor del ticket serà diferente
     */
-
-    
-
-
+// Ahora con la palabra "implements" vamos a implementarlo en las clases Cliente y Cliente_premium
 }

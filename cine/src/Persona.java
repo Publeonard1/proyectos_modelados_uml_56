@@ -3,7 +3,7 @@ public class Persona { // Clase madre o clase principal Persona en el cual tiene
     protected String cedula;// El tipo de dato es un String para las cedulas de los clientes para no hacer operaciones matematicas 
     protected String nombre; 
 //se le va a agragr los metodos accesorio set y get como están en el modelado de cine
-    public void setCedula(String cedulaString){ // En este metodo no me retornara nada
+    public void setCedula(String cedula){ // En este metodo no me retornara nada
         this.cedula = cedula; // Este atributo es para diferenciar el atributo con un this 
     }
 // Ahora getCedula como método accesorio o comportamineto

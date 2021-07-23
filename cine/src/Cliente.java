@@ -13,8 +13,8 @@ public class Cliente extends Persona implements Tiquete_interfaz { // En esta su
     @Override // Se reecribe el metodo Tiquete_interfaz.calcular_Precio(float) que se encuentra en la clase Tiquete
     public float calcular_Precio(float precio_Base) { // Y aquí se le agrag eñ contenido
     //para el ciente tradicional se va a suponer que que tiene un descuento de 1000 pesos del valor del ticket
-        float precioFinal = precio_Base - 1000;
-        return precioFinal;
+        float precioFinal_basico = precio_Base - 1000;
+        return precioFinal_basico; // Y de este modo se le hace el proceso de la interfaz a la clase Cliente premium
     }
 }
 
