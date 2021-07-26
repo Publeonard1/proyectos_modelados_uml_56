@@ -1,3 +1,5 @@
+import java.util.Scanner; //Fase 7.1: Abrir está libreria para introducir la cedula por teclado
+
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("BIENVENIDOS AL CINE!");
@@ -5,6 +7,16 @@ public class App {
 
         // CLINETE UNO, tradicional
         Cliente cliente_Uno = new Cliente(); // new palabra clave para darle vida al objeto y el constructor con su mismo nombre de clase
+        
+        //Fase 7.2: Se copia el Scanner de la clase App.java del proyecto ejemplos  para ingresaar los números de cédula
+        Scanner sc = new Scanner(System.in); // Se està creando un objeto de la clase Scanner llamado sc que es una utilidad dentro de la libreria de java. y el (System.in) està entrando al sistema
+        System.out.println("Ingrese su cédula: "); //Voy a preguntar mi nombre, como un input en .py
+        String cedula = sc.nextLine(); // Esté .nextLine() me permite leer la siguiente línea de String cambiamos nombre por cedula que es un atributo de la clase Persona
+        cliente_Uno.setCedula(cedula); // Llamamos el método setCedula de la clase Persona para que interactue con la libreria Scanner y ahora se hace para que se escriba el nombre del cliente por teclado
+        System.out.println("Ingrese su nombre, por favor: ");
+        String nombre = sc.nextLine();
+        cliente_Uno.setNombre(nombre); // Ahí la variable nombre esta lista para que se introduzca por teclado el nombre del cliente
+
         // Para darle valores de una clase se ha encapsulado o va privado por su atributos, no puede dar directamente valores  por eso se usan los set y los get 
         cliente_Uno.setCedula("1015231489"); /* Ahi es donde se llama el get y el set desde la clase App 
         para operar ya que estos vienen de la clase principal Persona.*/
@@ -74,6 +86,8 @@ public class App {
         cliente_Dos.saludar(); // Hola Cesar
         cliente_Dos.saludar("Buen día,"); // Buen día, Cesar
         // Método que se puede replicar y comportar de distantas formas dentro de la misma clase Persona 
+        
+        // Fase 7: Escribir por teclado la cedula desde otra clase padre o proyecto pero antes escribir import java.util.Scanner; en la primera línea 
     }
 }
 
