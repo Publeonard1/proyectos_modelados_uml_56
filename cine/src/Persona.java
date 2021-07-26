@@ -18,5 +18,26 @@ public class Persona { // Clase madre o clase principal Persona en el cual tiene
     public String getNombre(){
         return this.nombre;
     }
+    //FASE 3.  Se va a agregar en la clase persona por el método de polimorfismo, cómo mostrar los datos de la persona
+    public void mostrar_Datos(){
+        System.out.println("Cédula = " + this.cedula + " - Nombre = " + this.nombre);
+    }
 
+    // Fase 6: El otro ejemplo de polimorfismo que se comporte de distintas maneras y que este repetido dentro de una misma clase 
+    public void saludar(){ // Esté método no va a tener ningún parametros pero si va a tener una cadena de texto 
+        System.out.println("Hola " +  this.nombre); // Este método de cadena de texto para saludar a la persona
+    }
+    // Otro método como el anterior 
+    /*public void saludar(){ De una vez me dectecta este mensaje "Duplicate method saludar() in type Persona" Este método esta repetido en 
+        en la clase padre persona, Entonces hay que utilizar algo para diferenciar y ese algo son los argumentos que esta recibiendo. Y como en el primer
+        caso no tiene parametros, en este segundo va a recibir un tipo String que se va a llamar saludo. Lo que le permite difereciarse del anterior es que 
+        tiene un parametro.
+    }
+    */
+    public void saludar(String saludo){
+        System.out.println(saludo + " " + this.nombre); // Este método es igual pero lo diferencia del anterior es que recibe parametros. 
+    } // Estos dos métodos son para invocarlos en el App.java como polimorfismo
+
+    
 }
+

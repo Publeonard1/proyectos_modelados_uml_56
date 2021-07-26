@@ -16,11 +16,19 @@ public class Cliente extends Persona implements Tiquete_interfaz { // En esta su
         float precioFinal_basico = precio_Base - 1000;
         return precioFinal_basico; // Y de este modo se le hace el proceso de la interfaz a la clase Cliente premium
     }
+
+    // Fase 4: Ahora que en està subclase le agregue  para mostrar el id del cliente y se va a sobreescibir con @Override
+    @Override
+    public void mostrar_Datos(){
+        System.out.println("Cédula = " + this.cedula
+                                    + " - Nombre = " + this.nombre
+                                    + " - ID = " + this.id + " (Polimorfismo)");
+    }
 }
 
 /*
 Después de escribir "public class Cliente extends Persona" se agrega implements y luego aparece 
 la clase Tiquete_interfaz pero me muestra una advertencia "The type Cliente must implement the inherited abstract method 
 Tiquete_interfaz.calcular_Precio(float)" Que el tipo Clinete debe implementar el método abstracto Tiquete_interfaz.calcular_Precio(float)
-Eso quiere decir que està obligado a reescribir el método con la palabra @Override
+Eso quiere decir que està obligado a reescribir el método con la palabra  @Override
 */

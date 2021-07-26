@@ -38,7 +38,19 @@ public class App {
         Esto es lo que me muestra si estuviera en una impresora para poder tener el boleto y poder
         entrar. ­los \n sirve que de un salto de línea y no quede junto
         */
-        
+        // Ahora en esta fase 3 o continuación 3 se agraga un método proveniente de la clase Persona que muestre los datos de los clintes
+        cliente_Uno.mostrar_Datos(); 
+        // Fase 4: Se imprimen los datos pero ahora como hubo modificación en la subclase cliente con el método mostrar_datos le va a utlizar
+        // el ultimo cambio --> Cédula = 1015231489 - Nombre = Maria - ID = 145 mostando ahora el ID del cliente tradicional
+        // Este fué el vacio
+
+        //Fase 6: Ejemplo 2 polimorfismo en la Clase padre Persona usando herencia 
+        cliente_Uno.saludar(); //Ahí podemos elegir cual nos sirve y que parametro contiene
+        // Y mwe imprime "Hola Maria" 
+        // Ahora con el segundo método que tiene parametro tipo String, me permite darle texto por que tiene comillas 
+        cliente_Uno.saludar("Buenos días,"); // Edito el texto del tipo String "cliente_Uno.saludar(saludo);", Imprimo --> Buenos días, Maria
+        //Este es el sobrecargado y es un método que se comporta de diferente modo y se puede replicar dentro de una misma clase!
+
         // CLIENTE PREMIUM con todo lo anterior
         
         Cliente_premium cliente_Dos = new Cliente_premium(); // Aqui esta el constructor con el mismo nombre de la sublcase
@@ -55,21 +67,14 @@ public class App {
                             + "\nNombre: " + cliente_Dos.getNombre()
                             + "\nNúmero de tarjeta: " + cliente_Dos.getNumero_tarjeta() // Cambia por el numero tarjeta
                             + "\nPrecio del Tiquete: " + precio_premium); 
-            
-            /* Lo que muestra en pantalla s
-            BIENVENIDOS AL CINE!
-            Cédula: 1015231489
-            Nombre: Maria
-            ID: 145
-            Precio del Tiquete: 15000.0
-
-            Cédula: 1003459845
-            Nombre: Cesar
-            Número de tarjeta: 34
-            Precio del Tiquete: 8000.0
-            */
+        // Fase 5.1: mostrar los datos del cliente preferencial llamado el método reescrito desde la clase Cliente_premium
+        cliente_Dos.mostrar_Datos(); // Lo ejecuta y le mostrará --> Cédula = 1003459845 - Nombre = Cesar - Número de tarjeta = 34
+        
+        //Fase 6: el ultimo caso de polimorfismo es sobre escribir un método varias veces o que estè repetido y que se comporte distinto dentro de una clase
+        cliente_Dos.saludar(); // Hola Cesar
+        cliente_Dos.saludar("Buen día,"); // Buen día, Cesar
+        // Método que se puede replicar y comportar de distantas formas dentro de la misma clase Persona 
     }
-
 }
 
 // para hacer en el teclado back slash es con alt+92  --> \n esto permite hacer un salto de linea para saber 

@@ -15,4 +15,12 @@ public class Cliente_premium extends Persona implements Tiquete_interfaz{ // Tam
         float precioFinal_premium = (float)(precio_Base - (precio_Base * 0.50)); //Como me sigue mostrando error le agrago antes (float) y luego entre (la operación)
         return precioFinal_premium;
     }
+    
+    // Fase 5: Se va a sobrecargar con lo mque se hizo en la fase 3 y 4 haciendo polimorfismo en la subclase Clinete_premium
+    @Override
+    public void mostrar_Datos(){
+        System.out.println("Cédula = " + this.cedula
+                                    + " - Nombre = " + this.nombre
+                                    + " - Número de tarjeta = " + this.numero_tarjeta + " (Polimorfismo)");
+    }
 }
