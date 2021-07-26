@@ -14,7 +14,7 @@ public class App {
         String cedula = sc.nextLine(); // Esté .nextLine() me permite leer la siguiente línea de String cambiamos nombre por cedula que es un atributo de la clase Persona
         cliente_Uno.setCedula(cedula); // Llamamos el método setCedula de la clase Persona para que interactue con la libreria Scanner y ahora se hace para que se escriba el nombre del cliente por teclado
         System.out.println("Ingrese su nombre, por favor: ");
-        String nombre = sc.nextLine();
+        String nombre = sc.nextLine(); //Cuando se usa este .nextline es para capturar cadenas de texto String y .nextIn es para capturar Tipos enteros 
         cliente_Uno.setNombre(nombre); // Ahí la variable nombre esta lista para que se introduzca por teclado el nombre del cliente
 
         // Para darle valores de una clase se ha encapsulado o va privado por su atributos, no puede dar directamente valores  por eso se usan los set y los get 
@@ -88,6 +88,7 @@ public class App {
         // Método que se puede replicar y comportar de distantas formas dentro de la misma clase Persona 
         
         // Fase 7: Escribir por teclado la cedula desde otra clase padre o proyecto pero antes escribir import java.util.Scanner; en la primera línea 
+
     }
 }
 
