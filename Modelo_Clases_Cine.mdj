@@ -648,7 +648,7 @@
 											"top": 302,
 											"width": 123.9189453125,
 											"height": 13,
-											"text": "+numero_tarjeta",
+											"text": "-numero_tarjeta",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1494,7 +1494,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF6z1MfZ4rCQuA="
 							},
-							"name": "numero_tarjeta"
+							"name": "numero_tarjeta",
+							"visibility": "private"
 						}
 					],
 					"operations": [
