@@ -8,7 +8,7 @@ public class App {
         // CLINETE UNO, tradicional
         Cliente cliente_Uno = new Cliente(); // new palabra clave para darle vida al objeto y el constructor con su mismo nombre de clase
         
-        //Fase 7.2: Se copia el Scanner de la clase App.java del proyecto ejemplos  para ingresaar los números de cédula
+        //Fase 7.2: Se copia el Scanner de la clase App.java del proyecto ejemplos  para ingresar los números de cédula
         Scanner sc = new Scanner(System.in); // Se està creando un objeto de la clase Scanner llamado sc que es una utilidad dentro de la libreria de java. y el (System.in) està entrando al sistema
         System.out.println("Ingrese su cédula: "); //Voy a preguntar mi nombre, como un input en .py
         String cedula = sc.nextLine(); // Esté .nextLine() me permite leer la siguiente línea de String cambiamos nombre por cedula que es un atributo de la clase Persona
@@ -99,11 +99,11 @@ public class App {
         Prueba_lista pruebaContenedor = new Prueba_lista(); //Hace el constructor 
         pruebaContenedor.generarLista(); // luego invoca el método que esta en esa clase  y lleugo correr programa2.
 
-        // Fase 9.3: Crear la lista para que valla a intruducir los datos, que seán repetitivos con un cilo while 
-        int opcion = 1; 
-        while (opcion == 1) {   //Se usa el mismo Scanner sc y .equals me permite igualar 
+        // Fase 9.3: Crear la lista para que vaya a intruducir los datos, que seán repetitivos con un cilo while 
+        String opcion = "S"; 
+        while (opcion.equalsIgnoreCase("S")) {   //Se usa el mismo Scanner sc y .equals me permite igualar // El .equalsIgnoreCase permite retornar un buleano ingnorando si es mayuscula o no
             System.out.println("Ingrese su cédula: ");
-            cedula = sc.nextLine();
+            cedula = sc.next(); // Uso de next: Me va a leer el contenido de lo que se esta escebiendo por consola pero no va a saltar de línea, se va a quedar en la que está
             System.out.println("Ingrese su nombre: ");
             nombre = sc.nextLine();
             System.out.println("Ingrese si ID");
@@ -117,11 +117,17 @@ public class App {
             pruebaContenedor.agregarCliente(nuevoCliente); // Ya tiene todo el paquete de datos del cliente y lo recibe en la subclase Prueba_lista en
             // en su método agregarClinte y lo devuelve aquí en el main y lo itera con este while y agrega a la lista, vueleve el ciclo
             // Ahora se hace otro String que pregunte que si desea agregar otro cliente y culmina este ciclo
-            System.out.println("Desea agregar otro cliente? (1 / 0): ");
-            opcion = sc.nextInt();
+            System.out.println("Desea agregar otro cliente? (S / N ): ");
+            opcion = sc.next();
+            sc.nextLine(); // Cuando llegue a está línea siga pasando a la otra y no se quedé esperando con el .next() anterior
         }
         //Fase 10: Ahora como podemos acceder a esa lista, accediendo desde la subclase Prueba_lista  haiendo un método para que lo invoque aqui en el main
         pruebaContenedor.mostrar_Nombre_Clientes(); // Me va a mostrar una lista de los nombres de los clientes
+
+        // Fase 11: Mostrar todo los datos de los clientes en una factura con los métodos de las subclase Prueba_lista
+        /* Para comprovar que el método que me va a mostrar todos los datos del cliente se requiere del objeto pruebaContenedor 
+        y el método mostrar_Datos_Clientes de la subclase Prueba_lista*/
+        pruebaContenedor.mostrar_Datos_Clientes();
     }
 }
 

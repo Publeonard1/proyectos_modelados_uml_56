@@ -6,15 +6,15 @@ public class Prueba_lista {
     //Fase 9.1: Construir ese ArrayList mediante el constructor de la clase, como es un atributo se le da el modificador private
     private ArrayList<Cliente> listaCliente; //Aquí estamos declarando nuestro atributo llamandolo listaCliente
     // Para inicializar el debemos tomar el constructor de la clase ArrayLis. De manera ordenada se construye el objeto antes y después se agrega a los métodos
-
     // Fase 9.2: Darle vida al constructor para que inicialice o que es como tal el arreglo
     public Prueba_lista() { //Cuando iniciemos con valores lo dejemos en el constructor para cuando se requiere en otras funciones quede global dentro de la clase lo pueda usar
-        listaCliente =new ArrayList<>(); // Ya quedo inicializado nuestro constructor con la subclase Cliente
+        listaCliente = new ArrayList<>(); // Ya quedo inicializado nuestro constructor con la subclase Cliente
     }
+
     /*Fase 8: Creación de listas:
-    Lo primero que se va a ealizar es un ArrayList, vamos a ingresar unos números que tengán su pocisión para después buscarlos e eliminarlos
-    y luego hacer otro ArrayList para agregar variios Clientes. Vamos a crear un Método llamado generarLista 
-    */ /*Pero como me estagenarndo problema si invoo un mètodo de una misma clase en este caso main genera inconveniente y todo lo que hay en este método generarLista se pasa a otra clase*/
+    Lo primero que se va a realizar es un ArrayList, vamos a ingresar unos números que tengán su posición para después buscarlos e eliminarlos
+    y luego hacer otro ArrayList para agregar varios Clientes. Vamos a crear un Método llamado generarLista 
+    */ /*Pero como me estagenarndo problema si invoco un mètodo de una misma clase en este caso main genera inconveniente y todo lo que hay en este método generarLista se pasa a otra clase*/
     public void generarLista(){ //Por el momento no se generan datos de netrada (Paraemtros o argumentos)
         //Un atributo puede ser una lista y se caracteriza por el tipo de dato que esta tendra.
         ArrayList<Integer> listaNumeros = new ArrayList<>();//Arriba genera automaticamente la libraria para que crear la lista --> import java.util.ArrayList;. 
@@ -36,16 +36,32 @@ public class Prueba_lista {
             System.out.println(elemento); //Aqui en el forEach me va mostrar el valor y no el contenido 
         }); // Y su proposito es que va a recorrer la lista numeros y me va a imprimir cada número
     }
+
     // Fase 9: Vamos a crear un nuevo método para una lista e ir agregarndo nuevos clientes, y me va recibir un objeto constrido
     public void agregarCliente(Cliente pCliente){ //Aquí se sa como parametro el elemento pCliente con su subclase cliente
         // Se crea está lista en forma de atributo --> Fase 9.1
         listaCliente.add(pCliente);   //Fase9.3: Aquí le indica que necesita un elemento del objeto listaCliente que esta en este metodo como paramentro pCliente 
     }            // Esté pCliente sale en el App.java para crearun objeto y se va tomar los datosdel cliente y su proposito es guaradr esos datos en la lista
+    
     // Fase 10: Crear un nuevo método que me permita acceder a está lista solo muestre los nombres de los clientes
     public void mostrar_Nombre_Clientes() {
         for (int i = 0; i < listaCliente.size(); i++){
             System.out.println(listaCliente.get(i).getNombre()); // Tomando el nombre que me esta iterando
         }
+    }
+
+    // Fase 11 Cl15Jul: Se realiza un nuevo método para mostrar la totalidad de los datos de los clientes que contiene el objeto
+    public void mostrar_Datos_Clientes(){ //En este no me recibe nada de parametros porqué se va amanipular el ArrayList de objetos que ya es propiamente un atributo de esta clase
+        String cadena_Clientes = "";
+        System.out.println("\nDatos de los clientes"); //\n me permite apartar las impresiones anteriores y seguir con está
+        for (int i=0; i< listaCliente.size(); i++){ // i inicia en 0; desde i hasta listaCliente con el tamaño .size; y el incremento de i++
+            String datos = "Cédula: " + listaCliente.get(i).getCedula()
+                        + "\nnombre:" + listaCliente.get(i).getNombre()
+                        + "\nID:" + listaCliente.get(i).getID() 
+                        + "\n----------------------------------------";
+            cadena_Clientes = cadena_Clientes.concat(datos); //La función concat(str) , me permite tovar el valor de la variable cadena_Clientes y añadiendo otro valor, otra cadena de texto o otra variable
+        }
+    System.out.println(cadena_Clientes); // Con está impresión le va a mostrar toda la variable cadena_Clientes
     }
 }   
 
