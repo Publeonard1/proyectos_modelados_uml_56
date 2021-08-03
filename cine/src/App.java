@@ -88,7 +88,40 @@ public class App {
         // Método que se puede replicar y comportar de distantas formas dentro de la misma clase Persona 
         
         // Fase 7: Escribir por teclado la cedula desde otra clase padre o proyecto pero antes escribir import java.util.Scanner; en la primera línea 
+    
+        /*Fase 8: Creación de listas:
+        Lo primero que se va a ealizar es un ArrayList, vamos a ingresar unos números que tengán su pocisión para después buscarlos e eliminarlos
+        y luego hacer otro ArrayList para agregar variios Clientes. Vamos a crear un Método llamado generarLista 
+        */ /*Pero como me estagenarndo problema si invoo un mètodo de una misma clase en este caso main genera inconveniente y todo lo que hay en este método generarLista se pasa a otra clase*/
+    
+        // Ahora se invoca desde la subclase Prueba_lista el ciclo, el método donde esta el ciclo while que me permite introducir por teclado los datos necesarios para guardar los clientes
+        // Se llama con un nuevo objeto pruebaContenedor pero antes el nombre de la subclase
+        Prueba_lista pruebaContenedor = new Prueba_lista(); //Hace el constructor 
+        pruebaContenedor.generarLista(); // luego invoca el método que esta en esa clase  y lleugo correr programa2.
 
+        // Fase 9.3: Crear la lista para que valla a intruducir los datos, que seán repetitivos con un cilo while 
+        int opcion = 1; 
+        while (opcion == 1) {   //Se usa el mismo Scanner sc y .equals me permite igualar 
+            System.out.println("Ingrese su cédula: ");
+            cedula = sc.nextLine();
+            System.out.println("Ingrese su nombre: ");
+            nombre = sc.nextLine();
+            System.out.println("Ingrese si ID");
+            int id = sc.nextInt();
+            // Se crea el objeto nuevoCliente
+            Cliente nuevoCliente = new Cliente(); //Para que el objeto nuevo interactue con los metodos de la subclase cliente
+            nuevoCliente.setCedula(cedula);
+            nuevoCliente.setNombre(nombre);
+            nuevoCliente.setID(id); //Este ciclo busca de manera iterada que me genere varias veces un nuevo clientey borrando el anterior
+            //Voy a gregar los datos a la lista con el contenerdor pruebaContenedor.generarLista que está dentro del main
+            pruebaContenedor.agregarCliente(nuevoCliente); // Ya tiene todo el paquete de datos del cliente y lo recibe en la subclase Prueba_lista en
+            // en su método agregarClinte y lo devuelve aquí en el main y lo itera con este while y agrega a la lista, vueleve el ciclo
+            // Ahora se hace otro String que pregunte que si desea agregar otro cliente y culmina este ciclo
+            System.out.println("Desea agregar otro cliente? (1 / 0): ");
+            opcion = sc.nextInt();
+        }
+        //Fase 10: Ahora como podemos acceder a esa lista, accediendo desde la subclase Prueba_lista  haiendo un método para que lo invoque aqui en el main
+        pruebaContenedor.mostrar_Nombre_Clientes(); // Me va a mostrar una lista de los nombres de los clientes
     }
 }
 
@@ -161,4 +194,42 @@ git push origin master
 
 Paso 5: Crear un objeto pero antes de crear un tipo de dato a una variable 
     Cliente cliente_Uno = new  // new palabra clave para darle vida al objeto y el constructor con su mismo nombre de clase
+*/
+
+
+/*
+----------------------------Unidad 2, Tercer tema------------------------
+COLECCIONES Y EXEPCIONES 
+
+Java collection Framework
+
+Se conoce como una librería que permite manejar contenedores (Estructura de datos--> Listas,
+conjuntos de mapas, entre otros), todas estas clases permiten guardar en ellas referencias a objetos .
+
+*/
+
+/* -----------------------Listas------------------------------------------------------
+Se llaman listas a cualquier colección de objetos ordenados por posición, como un array. Podemos 
+añadir objetos con sus atributos y métodos, acceder a su pocisión es un objeto, eliminar, copiar, entre otros.
+
+IMPLEMENTACIONES
+1. ArrayList: Guarda una lista de elmentos en un array de tamaño dinámico.
+2. LinkedList: Permite inserción y borrado de elementos de la lista.
+3. Vector: Aumenta o reduce su tamaño de forma dinámica, se usán cuando se acumulan valores.
+4. Stack: Representa una pila de objetos de ultimo en entrar, primero en salir (LIFO). 
+
+Comenzamos FASE 8. Creación de listas 
+
+Crear una lista
+ist<Integer> listaEnteros(Nombre de nuestra lista) = new(Palabra clave) y el constructor ArrayList<>();
+var listaEnteros = new ArrayList<Integer>();
+
+Añadir tamaño de lista
+listaEnteros.add(4);
+listaEnteros.add(5);
+listaEnteros.add(7);
+listaEnteros.add(2, 6); // Agrega 6 entre 5 y 7
+
+main es un método estatico y no se pueden llamar elemntos de una misma clase a un método estatico y viceversa
+
 */
