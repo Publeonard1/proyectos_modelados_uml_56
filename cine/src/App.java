@@ -126,7 +126,7 @@ public class App {
             System.out.println("Desea agregar otro cliente? (S / N ): ");
             opcion = sc.next();
             sc.nextLine(); // Cuando llegue a está línea siga pasando a la otra y no se quedé esperando con el .next() anterior
-        }
+        } //Termina el ciclo While  
         //Fase 10: Ahora como podemos acceder a esa lista, accediendo desde la subclase Prueba_lista  haiendo un método para que lo invoque aqui en el main
         pruebaContenedor.mostrar_Nombre_Clientes(); // Me va a mostrar una lista de los nombres de los clientes
 
@@ -134,7 +134,6 @@ public class App {
         /* Para comprovar que el método que me va a mostrar todos los datos del cliente se requiere del objeto pruebaContenedor 
         y el método mostrar_Datos_Clientes de la subclase Prueba_lista*/
         pruebaContenedor.mostrar_Datos_Clientes();
-
     }
 }
 
