@@ -1,7 +1,17 @@
 public class Cliente extends Persona implements Tiquete_interfaz { // En esta sub clase Cliente vamos a heredar o hacer una extención desde la clase madre Persona
     // subclassClinete hereda <-- ClasePersona
     private int id;
-//Luego se realiza su get y set como métodos accesorios 
+// Fase 13: Hacer un constructor sobrecargado que me permita pero antes un constructor vacío
+    public Cliente(){ //Un constructor es un método y debe ser pubico no lleva void y ningçin tipo de returns, simplemente va el nombre y se va a llmar igual que la clase en este caso es Cliente
+        //Un constructor vacío y después un constructor sobrecargardo.
+    }  
+    public Cliente(String cedula, String nombre, int id) { // Estè es un constructor sobrecargado
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.id = id;
+    }
+
+    //Luego se realiza su get y set como métodos accesorios 
     public void setID(int id){
         this.id = id;
     }

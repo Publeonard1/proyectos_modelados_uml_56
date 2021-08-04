@@ -1,4 +1,5 @@
 import java.util.ArrayList; //Fase 8: Esta libreria se generó automaticamente para crear la lista ArrayList
+import java.util.InputMismatchException;
 import java.util.Scanner; // Esta libreria permite introducir por teclado los datos necesarios para formar la lista
 
 public class Prueba_lista {
@@ -16,6 +17,51 @@ public class Prueba_lista {
     y luego hacer otro ArrayList para agregar varios Clientes. Vamos a crear un Método llamado generarLista 
     */ /*Pero como me estagenarndo problema si invoco un mètodo de una misma clase en este caso main genera inconveniente y todo lo que hay en este método generarLista se pasa a otra clase*/
     public void generarLista(){ //Por el momento no se generan datos de netrada (Paraemtros o argumentos)
+        //Un atributo puede ser una lista  y se caracteriza por el tipo de dato que esta tendra.
+        // Fase 12: Como crear un try catch para que me capture un error como tener un dato tipo entero siendo que este es un double
+        try {
+            ArrayList<Integer> listaNumeros = new ArrayList<>();
+            Scanner sc = new Scanner(System.in);
+            int numero = 0;
+            while (numero >= 0) {
+                System.out.println("Ingrese un número (Número negativo para salir):");
+                numero = sc.nextInt();
+                if (numero >= 0) {
+                    listaNumeros.add(numero);
+                }
+            }
+
+            // Ciclo for
+            for (int i = 0; i < listaNumeros.size(); i++) {
+                System.out.println(listaNumeros.get(i));
+                // System.out.println(listaNumeros.get(i+1));
+            }
+            System.out.println();
+            // for each
+            listaNumeros.forEach((elemento) -> {
+                System.out.println(elemento);
+            });
+        } catch(InputMismatchException e) { // Excepción de tipo de dato
+            System.out.println("Solo se permiten número");
+        } catch (Exception e2) { // Excepción general
+            System.out.println("Se presentó un error con la lista");
+        }
+        finally {
+            System.out.println("Finalizó el método");
+        }
+    }
+
+        /*
+        } catch(InputMismatchException error1) {// Aqui me indica que falta un finally in catch (Syntax error, insert "Finally" to complete BlockStatements)
+                //Se agrega exeption y luego e como variable, también se puede llamar e1, error2, etc.
+                //Aquí adentro del catch(atrapar) es donde voy a agregar que es lo que va a ocurrir, lo que puedo hacer es mostrar un System.out.println()
+                System.out.println("Solo se permiten número"); 
+        } finally { // La otra instrucción es el finally
+            System.out.println("Finalizó el método generarLista");} //Esta llave esta mal
+        } // Cuando hay un Exeption no va importar el error que ocurra, va a ser generar
+        */
+        
+        /*public void generarLista(){ //Por el momento no se generan datos de entrada (Paraemtros o argumentos)
         //Un atributo puede ser una lista y se caracteriza por el tipo de dato que esta tendra.
         ArrayList<Integer> listaNumeros = new ArrayList<>();//Arriba genera automaticamente la libraria para que crear la lista --> import java.util.ArrayList;. 
         Scanner scan = new Scanner(System.in); // se crea un onjeto nuevo llamado scan porque el anterior esta dentro del main y este metodo es aparte 
@@ -35,7 +81,7 @@ public class Prueba_lista {
         listaNumeros.forEach(elemento -> { // Esta flecha  -> me indica lo que va a ejecutar en el bloque de .forEach
             System.out.println(elemento); //Aqui en el forEach me va mostrar el valor y no el contenido 
         }); // Y su proposito es que va a recorrer la lista numeros y me va a imprimir cada número
-    }
+    }*/
 
     // Fase 9: Vamos a crear un nuevo método para una lista e ir agregarndo nuevos clientes, y me va recibir un objeto constrido
     public void agregarCliente(Cliente pCliente){ //Aquí se sa como parametro el elemento pCliente con su subclase cliente

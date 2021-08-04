@@ -109,11 +109,17 @@ public class App {
             System.out.println("Ingrese si ID");
             int id = sc.nextInt();
             // Se crea el objeto nuevoCliente
-            Cliente nuevoCliente = new Cliente(); //Para que el objeto nuevo interactue con los metodos de la subclase cliente
+            /*Cliente nuevoCliente = new Cliente(); //Para que el objeto nuevo interactue con los metodos de la subclase cliente
+            //Esto se comenta para dar a la fase 13: crar en una línea los set y los get
             nuevoCliente.setCedula(cedula);
             nuevoCliente.setNombre(nombre);
             nuevoCliente.setID(id); //Este ciclo busca de manera iterada que me genere varias veces un nuevo clientey borrando el anterior
-            //Voy a gregar los datos a la lista con el contenerdor pruebaContenedor.generarLista que está dentro del main
+            
+        //Fase 13: Constructores sobrecargados en la subclase Cliente */
+            Cliente nuevoCliente = new Cliente(cedula, nombre, id); //Todo este objeto evita lo que hay en las líneas 114 hasta 116
+
+
+            //Voy a gregar los datos a la lista con el contenerdor pruebaContenedor.generarLista que está dentro del main 
             pruebaContenedor.agregarCliente(nuevoCliente); // Ya tiene todo el paquete de datos del cliente y lo recibe en la subclase Prueba_lista en
             // en su método agregarClinte y lo devuelve aquí en el main y lo itera con este while y agrega a la lista, vueleve el ciclo
             // Ahora se hace otro String que pregunte que si desea agregar otro cliente y culmina este ciclo
@@ -128,6 +134,7 @@ public class App {
         /* Para comprovar que el método que me va a mostrar todos los datos del cliente se requiere del objeto pruebaContenedor 
         y el método mostrar_Datos_Clientes de la subclase Prueba_lista*/
         pruebaContenedor.mostrar_Datos_Clientes();
+
     }
 }
 
@@ -204,7 +211,7 @@ Paso 5: Crear un objeto pero antes de crear un tipo de dato a una variable
 
 
 /*
-----------------------------Unidad 2, Tercer tema------------------------
+----------------------------Unidad 2, Tercer tema 13J------------------------
 COLECCIONES Y EXEPCIONES 
 
 Java collection Framework
@@ -237,5 +244,159 @@ listaEnteros.add(7);
 listaEnteros.add(2, 6); // Agrega 6 entre 5 y 7
 
 main es un método estatico y no se pueden llamar elemntos de una misma clase a un método estatico y viceversa
+
+---------------------------------Java Collection Framework-15J-----------------------------------------------
+Es como se conocen a la librería de clases contenedoras de java que podemos encontrar en el paquete estándar (java.util)
+// Lista de enteros.
+// Puede haber enteros repetidos en la lista:
+List<Integer> listaDeManzanas;
+
+Estas clases sirven para almacenar colecciones de objetos como listas, conjuntos, mapas, entre otros. 
+// Conjunto de enteros. 
+// No puede haber enteros repetidos:
+Set<Integer> conjuntoDeNaranjas;
+
+Todas estas clase permiten guardaren ellas referencias a objetos 
+// Un mapa que asocia a una cadena un entero,
+// como en una lista de notas de un examen:
+// [("Juan Goytisolo", 9.5), 
+// ("Pablo Iglesias", 5.0), ...]
+Map<String, Integer> mapaDeNota
+
+------------------------------- Conjusntos----------------------------------
+ES otro tipo de contenedor como las listas, pero en el no hay ningún orden de colección de objetos y cada elemento 
+sólo aparece una vez al contrario que una lista, donde podian repetirse 
+* HashSet: Usa tablas hash para acelerar la búsqueda, adición y aliminación de elementos .
+* LinkedHashSet: Es una versión ordenada de HashSet que mantiene una lista doblemente vinculada en todos los elementos.
+* TreesET: Usa un árbil binario para acelerar la búsqueda, adición y eliminación de elementos.
+
+* Crear un conjunto 
+Set<Integer> conjuntoEnteros = new HashSet<>();
+var conjuntoEnteros = new HashSet<Integer>();
+
+* Añadir elementos al conjunto
+conjuntoEnteros.add(4);
+conjuntoEnteros.add(5);
+conjuntoEnteros.add(7);
+conjuntoEnteros.add(4); // retorna false por repetido
+
+* Tamaño del conjunto
+conjuntoEnteros.size(); // 3 ---> sixe (tamaño)
+
+* Esta en el conjunto ?
+conjuntoEnteros.contains(7); // 'true' ---> Los contains sirve  para determinar si el conjunto esta contenido en el mismo
+conjuntoEnteros.contains(8); // 'false'
+
+* Eliminar objeto
+conjuntoEnteros.remove(new Integer(7)); // true ---> 
+
+* Está Vacía?
+conjuntoEnteros.isEmpty(); ---->   // false
+conjuntoEnteros.clear(); ----> // Ahora si está vacía
+
+* Recorrer todos los elementos
+for (Integer entero: conjuntoEnteros) {
+System.out.println(entero);
+}
+
+----------------------------------Colas------------------------------------------------------
+La cola (Queue) Se usan para insertar elementos al final de la cola y los elimina desde el principio de la cola.
+El Deque representa una cola de dos extremos, es decir una cola en la que puede agregar y eliminar elementos de ambos
+extremos.
+
+Implememtaciones 
+* PriorityQueue: Implementación del algoritmo de cola
+* LinkedList: Permite inserción y borrado de elementos de la lista. IMplementa la interface Deque
+* ArrayDeque: Proporciona una forma de aplicar array de tamaño dinámico, ademas de la implementación de la interfaz Deque
+
+Queue<Integer> colaEnteros = new PriorityQueue<>();
+var colaEnteros = new LinkedList<Integer>();
+
+● Crear cola
+colaEnteros.add(4);
+colaEnteros.offer(5);
+colaEnteros.offer(7);
+colaEnteros.offer(6);
+
+●Añadir elementos al conjunto
+colaEnteros.size(); // 4
+
+● Tamaño de cola
+colaEnteros.poll(); // 4
+colaEnteros.remove(); // 5
+
+●Obtener un elemento de cola
+colaEnteros.peek(); // 7
+colaEnteros.element(); // 7
+
+●Obtener el primer elemento de cola
+colaEnteros.remove(); // 7
+
+●Está vacía?
+colaEnteros.isEmpty(); // false
+colaEnteros.clear(); // Ahora si está vacía
+
+●Recorrer todos los elementos
+for (Integer entero: colaEnteros) {
+System.out.println(entero);
+
+------------------------------------------Mapas-----------------------------------------------------
+Permiten establecer una correspondencia entre pares de objetos: uno que actúa como clave y otro como valor asociado a 
+esa clave.
+Un diccionario es un mapa entre cadenas de texto: La oalabra que buscamos en el diccionario actúa como clave y su 
+significado como valor asociado. Se usan cuando se quiere dar un orden especifico a nuestra información es cuando se 
+quiere tener varios datos y necesariamente se requería de diccinarios para organizarlos
+
+Implementación 
+Hashtable: Es una estructura de datos que utiliza una función hash. Ya no es usado.
+HashMap: Almacena pares clave / valor en una tabla hash, y no están oredandos de ninguna manera.
+LinkedHashMap: Agrega una lista vinculada a la estructura del HashMap.
+TreeMap: Es implementado como un árbol Rojo-negro, un tipo de árbol binario de búsqueda equilibrada.
+
+
+
+
+------------------------------------------Java Generics-------------------------------------------
+Cómo manejar clases y métodos de una forma generica en los cuales yo puede indicarque tipo de dato va atener mi información. 
+Los generics fueron introducidos en la versión 5 de Java 2004
+Las colecciones (Listas, conjuntos,etc) pueden guardar Objects de cualquier tipo
+Restringe los Objects a ser puestos en la colección.
+Permiten al compilador informar de muchos errores de compilación que hasta el momento solo se descubririan en tiempos de ejecución
+
+-----------------------------------------Convenciones----------------------------------------------------
+Según las convenciones los nombres de los parametros de tipo usados comúnmente son los siguientes:
+
+E: Elemento de una colección 
+K: Clave
+N: Número
+T: tipo
+V: valor
+S, U, W, etc: Para segundos , terceros y cuartos tipos.
+
+-----------------------------------------Exepciones---------------------------------------------------------
+Se conocen como los errores que me van a ocurrir en tiempo de ejcución y que me permiten cortar la ejecución del 
+programa.
+
+Captura de Exepciones: Es un mecánismo en el uso de bloques try/catch/finally.
+El manejo de exepciones se logra con el bloque try. 
+El bloque try pueden manejar multiples exepciones.
+La cláusula finally es ejecutada con posterioridad cualquiera sea la condición de termino de try (sin o con error).
+Esta sección permite dejar las cosas consistentes antes del término del bloque try
+
+Esquema Try: Intentar 
+try {
+//Código que puede provocar errores
+} catch(Tipo1 var1) { //catch: atrapar
+//Gestión del error de tipo Tipo1
+} catch(Tipo2 | Tipo3 | Tipo4 var) {
+//Gestión del error de tipo Tipo2,
+// Tipo3 o Tipo4
+} catch(TipoN varN) {
+//Gestión del error de tipo TipoN
+} finally {  // Se ejecuta con error o no y el clasico es el cierre de conexiones de bases de datos, con maquinas, entre otros
+//Código de finally
+}
+
+
 
 */

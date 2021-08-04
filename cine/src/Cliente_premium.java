@@ -1,8 +1,8 @@
-public class Cliente_premium extends Persona implements Tiquete_interfaz{ // Tamabién hereda la conexion con la clase madre llamada Persona
+public class Cliente_premium extends Persona implements Tiquete_interfaz{ // También hereda la conexion con la clase padre llamada Persona
     
     private int numero_tarjeta;
 
-    public void setNumero_tarjeta(int numeroTarjeta){ // Estos no tienen Id, solo trajeta para tener acceso
+    public void setNumero_tarjeta(int numeroTarjeta){ // Estos no tienen Id, solo tarjeta para tener acceso
         this.numero_tarjeta = numeroTarjeta;        
     }
 
